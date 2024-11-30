@@ -6,7 +6,7 @@
 | Tsaldia Hukma Cita | 5027231036 | 
 
 # Daftar Isi
-1. [Topology](#topology-&-pembagian-subnet)
+1. [Topology](#topology-pembagian-subnet)
 2. [Konfigurasi](#konfigurasi-ip-address)
 3. 
 
