@@ -40,6 +40,184 @@ Jane: Memiliki 200 host.
 # Tree Pembagian IP
 ![image](https://github.com/user-attachments/assets/bdf5ddf6-2858-4f3c-8cda-d34e3900cff3)
 
+## Subnetting
 
+### NewEridu
+```
+#NAT
+auto eth0
+iface eth0 inet dhcp
+#A1
+auto eth1
+iface eth1 inet static
+	address 192.233.1.217
+	netmask 255.255.255.252
+#A5
+auto eth2
+iface eth2 inet static
+	address 192.233.1.221
+	netmask 255.255.255.252
+```
+
+### LuminaSquare
+```
+#A1
+auto eth0
+iface eth0 inet static
+	address 192.233.1.218
+	netmask 255.255.255.252
+	gateway 192.233.1.217
+#A4
+auto eth1
+iface eth1 inet static
+	address 192.233.0.1
+	netmask 255.255.255.0
+#A2
+auto eth2
+iface eth2 inet static
+	address 192.233.1.193
+	netmask 255.255.255.248
+```
+
+### Jane
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+### Policeboo
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+### HIA
+```
+#A2
+auto eth0
+iface eth0 inet static
+	address 192.233.1.195
+	netmask 255.255.255.248
+  	gateway 192.233.1.193
+```
+
+### BalletTwins
+```
+#A2
+auto eth0
+iface eth0 inet static
+	address 192.233.1.194
+	netmask 255.255.255.248
+  	gateway 192.233.1.193
+#A3
+auto eth1
+iface eth1 inet static
+  	address 192.233.1.1
+	netmask 255.255.255.128
+```
+
+### Ellen
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+### Lycaon
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+### SixStreet
+```
+#A5
+auto eth0
+iface eth0 inet static
+	address 192.233.1.222
+	netmask 255.255.255.252
+	gateway 192.233.1.221
+#A9
+auto eth1
+iface eth1 inet static
+	address 192.233.1.209
+	netmask 255.255.255.248
+#A6
+auto eth2
+iface eth2 inet static
+	address 192.233.1.201
+	netmask 255.255.255.248
+```
+
+### Fairy
+```
+#A9
+auto eth0
+iface eth0 inet static
+	address 192.233.1.210
+	netmask 255.255.255.248
+	gateway 192.233.1.209
+```
+
+### HDD
+```
+#A9
+auto eth0
+iface eth0 inet static
+	address 192.233.1.211
+	netmask 255.255.255.248
+	gateway 192.233.1.209
+```
+
+### OuterRing
+```
+#A6
+auto eth2
+iface eth2 inet static
+	address 192.233.1.202
+	netmask 255.255.255.248
+	gateway 192.233.1.201
+#A8
+auto eth2
+iface eth2 inet static
+	address 192.233.1.129
+	netmask 255.255.255.192
+```
+
+### Caesar
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+### Burnice
+```
+auto eth0
+iface eth0 inet dhcp
+```
+
+### ScootOutpost
+```
+#A6
+auto eth2
+iface eth2 inet static
+	address 192.233.1.203
+	netmask 255.255.255.248
+	gateway 192.233.1.201
+#A7
+auto eth0
+iface eth0 inet static
+	address 192.233.1.225
+	netmask 255.255.255.252
+```
+
+### HollowZero
+```
+#A7
+auto eth0
+iface eth0 inet static
+	address 192.233.1.226
+	netmask 255.255.255.252
+	gateway 192.233.1.225
+```
 
 
