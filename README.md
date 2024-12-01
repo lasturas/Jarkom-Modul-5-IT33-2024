@@ -10,7 +10,7 @@
 2. [Spreadsheet Pembagian IP](#spreadsheet-pembagian-ip)
 3. [Topology & Pembagian Subnet](#topology--pembagian-subnet)
 4. [Tree Pembagian IP](#tree-pembagian-ip)
-5. [Konfigurasi](#konfigurasi-ip-address)
+5. [Subnetting](#subnetting)
 6. 
 
 # IP Prefix
@@ -40,9 +40,9 @@ Jane: Memiliki 200 host.
 # Tree Pembagian IP
 ![image](https://github.com/user-attachments/assets/bdf5ddf6-2858-4f3c-8cda-d34e3900cff3)
 
-## Subnetting
+# Subnetting
 
-### NewEridu
+## NewEridu
 ```
 #NAT
 auto eth0
@@ -59,7 +59,7 @@ iface eth2 inet static
 	netmask 255.255.255.252
 ```
 
-### LuminaSquare
+## LuminaSquare
 ```
 #A1
 auto eth0
@@ -79,19 +79,19 @@ iface eth2 inet static
 	netmask 255.255.255.248
 ```
 
-### Jane
+## Jane
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-### Policeboo
+## Policeboo
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-### HIA
+## HIA
 ```
 #A2
 auto eth0
@@ -101,7 +101,7 @@ iface eth0 inet static
   	gateway 192.233.1.193
 ```
 
-### BalletTwins
+## BalletTwins
 ```
 #A2
 auto eth0
@@ -116,19 +116,19 @@ iface eth1 inet static
 	netmask 255.255.255.128
 ```
 
-### Ellen
+## Ellen
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-### Lycaon
+## Lycaon
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-### SixStreet
+## SixStreet
 ```
 #A5
 auto eth0
@@ -148,7 +148,7 @@ iface eth2 inet static
 	netmask 255.255.255.248
 ```
 
-### Fairy
+## Fairy
 ```
 #A9
 auto eth0
@@ -158,7 +158,7 @@ iface eth0 inet static
 	gateway 192.233.1.209
 ```
 
-### HDD
+## HDD
 ```
 #A9
 auto eth0
@@ -168,7 +168,7 @@ iface eth0 inet static
 	gateway 192.233.1.209
 ```
 
-### OuterRing
+## OuterRing
 ```
 #A6
 auto eth2
@@ -183,7 +183,7 @@ iface eth2 inet static
 	netmask 255.255.255.192
 ```
 
-### Caesar
+## Caesar
 ```
 auto eth0
 iface eth0 inet dhcp
@@ -195,7 +195,7 @@ auto eth0
 iface eth0 inet dhcp
 ```
 
-### ScootOutpost
+## ScootOutpost
 ```
 #A6
 auto eth2
@@ -210,7 +210,7 @@ iface eth0 inet static
 	netmask 255.255.255.252
 ```
 
-### HollowZero
+## HollowZero
 ```
 #A7
 auto eth0
