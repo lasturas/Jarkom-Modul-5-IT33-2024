@@ -153,7 +153,7 @@ iface eth2 inet static
 #A9
 auto eth0
 iface eth0 inet static
-	address 192.233.1.210
+	address 192.233.1.211
 	netmask 255.255.255.248
 	gateway 192.233.1.209
 ```
@@ -163,7 +163,7 @@ iface eth0 inet static
 #A9
 auto eth0
 iface eth0 inet static
-	address 192.233.1.211
+	address 192.233.1.210
 	netmask 255.255.255.248
 	gateway 192.233.1.209
 ```
@@ -220,4 +220,255 @@ iface eth0 inet static
 	gateway 192.233.1.225
 ```
 
+## Routing
+
+### NewEridu
+```
+#A2
+route add -net 192.233.1.192 netmask 255.255.255.248 gw 192.233.1.218
+
+#A3
+route add -net 192.233.1.0 netmask 255.255.255.128 gw 192.233.1.218
+
+#A4
+route add -net 192.233.0.0 netmask 255.255.255.0 gw 192.233.1.218
+
+#A6
+route add -net 192.233.1.200 netmask 255.255.255.248 gw 192.233.1.222
+
+#A7
+route add -net 192.233.1.224 netmask 255.255.255.252 gw 192.233.1.222
+
+#A8
+route add -net 192.233.1.128 netmask 255.255.255.192 gw 192.233.1.222
+
+#A9
+route add -net 192.233.1.208 netmask 255.255.255.248 gw 192.233.1.222
+
+#Otomasi iptables awal
+IP_ETH0=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT --to-source $IP_ETH0
+```
+
+### LuminaSquare
+```
+#A3
+route add -net 192.233.1.0 netmask 255.255.255.128 gw 192.233.1.195
+
+#A7
+route add -net 192.233.1.224 netmask 255.255.255.252 gw 192.233.1.217
+
+#A8
+route add -net 192.233.1.128 netmask 255.255.255.192 gw 192.233.1.217
+
+#A9
+route add -net 192.233.1.208 netmask 255.255.255.248 gw 192.233.1.217
+
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt install isc-dhcp-relay -y
+
+echo 'SERVERS="192.233.1.211"
+INTERFACES="eth0 eth1 eth2 eth3"
+OPTIONS=""
+' > /etc/default/isc-dhcp-relay
+
+echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
+
+service isc-dhcp-relay restart
+```
+
+### BalletTwins
+```
+#A4
+route add -net 192.233.0.0 netmask 255.255.255.0 gw 192.233.1.193
+
+#A7
+route add -net 192.233.1.224 netmask 255.255.255.252 gw 192.233.1.193
+
+#A8
+route add -net 192.233.1.128 netmask 255.255.255.192 gw 192.233.1.193
+
+#A9
+route add -net 192.233.1.208 netmask 255.255.255.248 gw 192.233.1.193
+
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt install isc-dhcp-relay -y
+
+echo 'SERVERS="192.233.1.211"
+INTERFACES="eth0 eth1 eth2 eth3"
+OPTIONS=""
+' > /etc/default/isc-dhcp-relay
+
+echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
+
+service isc-dhcp-relay restart
+```
+
+### SiXStreet
+```
+#A2
+route add -net 192.233.1.192 netmask 255.255.255.248 gw 192.233.1.221
+
+#A3
+route add -net 192.233.1.0 netmask 255.255.255.128 gw 192.233.1.221
+
+#A4
+route add -net 192.233.0.0 netmask 255.255.255.0 gw 192.233.1.221
+
+#A7
+route add -net 192.233.1.224 netmask 255.255.255.252 gw 192.233.1.203
+
+#A8
+route add -net 192.233.1.128 netmask 255.255.255.192 gw 192.233.1.202
+
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt install isc-dhcp-relay -y
+
+echo 'SERVERS="192.233.1.211"
+INTERFACES="eth0 eth1 eth2 eth3"
+OPTIONS=""
+' > /etc/default/isc-dhcp-relay
+
+echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
+
+service isc-dhcp-relay restart
+```
+
+### OuterRing
+```
+#A2
+route add -net 192.233.1.192 netmask 255.255.255.248 gw 192.233.1.201
+
+#A3
+route add -net 192.233.1.0 netmask 255.255.255.128 gw 192.233.1.201
+
+#A4
+route add -net 192.233.0.0 netmask 255.255.255.0 gw 192.233.1.201
+
+#A7
+route add -net 192.233.1.224 netmask 255.255.255.252 gw 192.233.1.203
+
+#A9
+route add -net 192.233.1.208 netmask 255.255.255.248 gw 192.233.1.201
+
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt install isc-dhcp-relay -y
+
+echo 'SERVERS="192.233.1.211"
+INTERFACES="eth0 eth1 eth2 eth3"
+OPTIONS=""
+' > /etc/default/isc-dhcp-relay
+
+echo 'net.ipv4.ip_forward=1' >> /etc/sysctl.conf
+
+service isc-dhcp-relay restart
+```
+
+### ScootOutpost
+```
+#A2
+route add -net 192.233.1.192 netmask 255.255.255.248 gw 192.233.1.201
+
+#A3
+route add -net 192.233.1.0 netmask 255.255.255.128 gw 192.233.1.201
+
+#A4
+route add -net 192.233.0.0 netmask 255.255.255.0 gw 192.233.1.201
+
+#A8
+route add -net 192.233.1.128 netmask 255.255.255.192 gw 192.233.1.202
+
+#A9
+route add -net 192.233.1.208 netmask 255.255.255.248 gw 192.233.1.201
+
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+```
+
+### Fairy
+```
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt-get install isc-dhcp-server netcat -y
+
+echo 'INTERFACESv4="eth0"' > /etc/default/isc-dhcp-server
+
+echo '#A8
+subnet 192.233.1.128 netmask 255.255.255.192 {
+        range 192.233.1.130 192.233.1.190;
+        option routers 192.233.1.129; # Gateway
+        option broadcast-address 192.233.1.191;
+        option domain-name-servers 192.233.1.210; #IP HDD
+        default-lease-time 600;
+        max-lease-time 7200;
+}
+
+#A4
+subnet 192.233.0.0 netmask 255.255.255.0 {
+        range 192.233.0.2 192.233.0.254;
+        option routers 192.233.0.1;
+        option broadcast-address 192.233.0.255;
+        option domain-name-servers 192.233.1.210;
+        default-lease-time 600;
+        max-lease-time 7200;
+}
+
+#A3
+subnet 192.233.1.0 netmask 255.255.255.128 {
+        range 192.233.1.2 192.233.1.126;
+        option routers 192.233.1.1;
+        option broadcast-address 192.233.1.127;
+        option domain-name-servers 192.233.1.210;
+        default-lease-time 600;
+        max-lease-time 7200;
+}
+
+subnet 192.233.1.216 netmask 255.255.255.252 {}
+subnet 192.233.1.192 netmask 255.255.255.248 {}
+subnet 192.233.1.220 netmask 255.255.255.252 {}
+subnet 192.233.1.200 netmask 255.255.255.248 {}
+subnet 192.233.1.224 netmask 255.255.255.252 {}
+subnet 192.233.1.208 netmask 255.255.255.248 {}
+' > /etc/dhcp/dhcpd.conf
+
+service isc-dhcp-server restart
+```
+
+### HDD
+```
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt-get install bind9 netcat -y
+
+echo 'options {
+        directory "/var/cache/bind";
+
+        forwarders {
+                192.168.122.1;
+        };
+
+        // dnssec-validation auto;
+        allow-query{any;};
+        auth-nxdomain no;
+        listen-on-v6 { any; };
+}; ' >/etc/bind/named.conf.options
+
+service bind9 restart
+```
+
+### HIA & HollowZero
+```
+echo 'nameserver 192.168.122.1' > /etc/resolv.conf
+apt-get update
+apt-get install apache2 netcat -y
+
+service apache2 start
+
+echo 'Welcome to {hostname}' > /var/www/html/index.html
+
+service apache2 restart
+```
 
