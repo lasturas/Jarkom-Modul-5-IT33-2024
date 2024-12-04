@@ -85,13 +85,13 @@ auto eth0
 iface eth0 inet dhcp
 ```
 
-## Policeboo
+### Policeboo
 ```
 auto eth0
 iface eth0 inet dhcp
 ```
 
-## HIA
+### HIA
 ```
 #A2
 auto eth0
