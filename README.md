@@ -96,7 +96,7 @@ iface eth0 inet dhcp
 #A2
 auto eth0
 iface eth0 inet static
-	address 192.233.1.195
+	address 192.233.1.194
 	netmask 255.255.255.248
   	gateway 192.233.1.193
 ```
@@ -106,7 +106,7 @@ iface eth0 inet static
 #A2
 auto eth0
 iface eth0 inet static
-	address 192.233.1.194
+	address 192.233.1.195
 	netmask 255.255.255.248
   	gateway 192.233.1.193
 #A3
