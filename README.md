@@ -474,13 +474,13 @@ service apache2 restart
 
 
 ### MISI 2 NO 2 
-Fairy ping HDD
+Fairy ping HDD   
 ![image](https://github.com/user-attachments/assets/095bedc2-1c48-4755-a9e3-bee67d7cb383)
 
-HDD ping fairy
+HDD ping fairy   
 ![image](https://github.com/user-attachments/assets/f1dd4283-4f62-4b02-9c67-7ccc430ee4e3)
 
-New Eridu ping Fairy
+New Eridu ping Fairy   
 ![image](https://github.com/user-attachments/assets/543c857a-f6df-47fe-91e0-c2e74d9351e3)
 
 
